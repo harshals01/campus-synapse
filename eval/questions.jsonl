@@ -1,0 +1,48 @@
+// Campus Synapse evaluation set.
+//
+// WORKING EXAMPLE, NOT THE FINAL SET. These 26 questions are written against the
+// synthetic documents from scripts/make_demo_pdfs.py so the harness can be run
+// end to end today. Replace them with questions about your real documents, and
+// grow the set to roughly 70: about 30 in the dev split for all tuning, and
+// about 40 in the test split, frozen and run once for the report.
+//
+// Every answerable question must have its gold_document and gold_pages checked
+// against the actual page by a team member. A question drafted with help from a
+// model and never verified is worse than no question at all.
+//
+// Fields:
+//   id                 unique, stable
+//   split              "dev" (tuning) | "test" (held out, run once)
+//   asker              the account that asks it; its branch and semester decide scope
+//   question           asked verbatim
+//   answerable         false for anything the documents genuinely cannot answer
+//   gold_document      display_name of the document holding the answer
+//   gold_pages         1-based pages the fact appears on
+//   gold_answer_points short strings a correct answer must contain; scored by hand
+//   kind               exact | paraphrase | multi_chunk | out_of_scope | wrong_audience
+{"id": "d01", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "What is the tuition fee for semester 5?", "answerable": true, "gold_document": "fee_notice_cse_sem5.pdf", "gold_pages": [1], "gold_answer_points": ["62500"], "kind": "exact"}
+{"id": "d02", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "How much is the late payment fine?", "answerable": true, "gold_document": "fee_notice_cse_sem5.pdf", "gold_pages": [2], "gold_answer_points": ["500 rupees per week", "capped at 5000"], "kind": "exact"}
+{"id": "d03", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "What happens if I do not clear my dues before the exam?", "answerable": true, "gold_document": "fee_notice_cse_sem5.pdf", "gold_pages": [2], "gold_answer_points": ["hall ticket", "withheld"], "kind": "paraphrase"}
+{"id": "d04", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "If I withdraw in late August, how much of my tuition comes back?", "answerable": true, "gold_document": "fee_notice_cse_sem5.pdf", "gold_pages": [3], "gold_answer_points": ["50 percent", "30 August"], "kind": "paraphrase"}
+{"id": "d05", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "When is the Database Management Systems exam?", "answerable": true, "gold_document": "exam_timetable_cse_sem5.pdf", "gold_pages": [1], "gold_answer_points": ["4 December", "14:00"], "kind": "exact"}
+{"id": "d06", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "Can I take a programmable calculator into the Computer Networks exam?", "answerable": true, "gold_document": "exam_timetable_cse_sem5.pdf", "gold_pages": [2], "gold_answer_points": ["not allowed", "CS303"], "kind": "paraphrase"}
+{"id": "d07", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "How early do I have to reach the examination hall?", "answerable": true, "gold_document": "exam_timetable_cse_sem5.pdf", "gold_pages": [2], "gold_answer_points": ["30 minutes"], "kind": "exact"}
+{"id": "d08", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "What is covered in unit 3 of CS301?", "answerable": true, "gold_document": "syllabus_cse_sem5.pdf", "gold_pages": [1], "gold_answer_points": ["graphs", "shortest paths"], "kind": "exact"}
+{"id": "d09", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "What attendance do I need to sit the end semester exam?", "answerable": true, "gold_document": "syllabus_cse_sem5.pdf", "gold_pages": [3], "gold_answer_points": ["75 percent"], "kind": "exact"}
+{"id": "d10", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "My attendance is 68 percent. What can I do?", "answerable": true, "gold_document": "syllabus_cse_sem5.pdf", "gold_pages": [3], "gold_answer_points": ["condonation", "dean", "medical"], "kind": "paraphrase"}
+{"id": "d11", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "How are internal marks split up?", "answerable": true, "gold_document": "syllabus_cse_sem5.pdf", "gold_pages": [3], "gold_answer_points": ["30", "two mid semester tests", "assignments"], "kind": "paraphrase"}
+{"id": "d12", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "When does the Diwali break start?", "answerable": true, "gold_document": "academic_calendar_2026.pdf", "gold_pages": [2], "gold_answer_points": ["8 November"], "kind": "exact"}
+{"id": "d13", "split": "dev", "asker": "student.ece3b@bitmesra.ac.in", "question": "When are the mid semester examinations?", "answerable": true, "gold_document": "academic_calendar_2026.pdf", "gold_pages": [1], "gold_answer_points": ["15", "19 September"], "kind": "exact"}
+{"id": "d14", "split": "dev", "asker": "student.ece3b@bitmesra.ac.in", "question": "How many books can I borrow and for how long?", "answerable": true, "gold_document": "library_rules.pdf", "gold_pages": [1], "gold_answer_points": ["4 books", "14 days"], "kind": "exact"}
+{"id": "d15", "split": "dev", "asker": "student.ece3b@bitmesra.ac.in", "question": "What is my semester 3 tuition fee?", "answerable": true, "gold_document": "fee_notice_ece_sem3.pdf", "gold_pages": [1], "gold_answer_points": ["58000"], "kind": "exact"}
+{"id": "d16", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "What CGPA do I need for the merit scholarship?", "answerable": true, "gold_document": "scholarship_scheme.pdf", "gold_pages": [1], "gold_answer_points": ["9.0", "25 percent"], "kind": "exact"}
+{"id": "d17", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "What is the fee deadline and what does it cost me if I miss it?", "answerable": true, "gold_document": "fee_notice_cse_sem5.pdf", "gold_pages": [1, 2], "gold_answer_points": ["30 September", "500 rupees per week"], "kind": "multi_chunk"}
+{"id": "d18", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "Who won the cricket world cup in 2023?", "answerable": false, "gold_answer_points": [], "kind": "out_of_scope"}
+{"id": "d19", "split": "dev", "asker": "student.cse5a@bitmesra.ac.in", "question": "What is the hostel mess menu for this week?", "answerable": false, "gold_answer_points": [], "kind": "out_of_scope"}
+{"id": "d20", "split": "dev", "asker": "student.ece3b@bitmesra.ac.in", "question": "When is the CS302 Database Management Systems exam?", "answerable": false, "gold_answer_points": [], "kind": "wrong_audience"}
+{"id": "t01", "split": "test", "asker": "student.cse5a@bitmesra.ac.in", "question": "What is the last date to pay fees without a penalty?", "answerable": true, "gold_document": "fee_notice_cse_sem5.pdf", "gold_pages": [1], "gold_answer_points": ["30 September 2026"], "kind": "paraphrase"}
+{"id": "t02", "split": "test", "asker": "student.cse5a@bitmesra.ac.in", "question": "Is the admission fee refundable if I leave?", "answerable": true, "gold_document": "fee_notice_cse_sem5.pdf", "gold_pages": [3], "gold_answer_points": ["never refundable"], "kind": "paraphrase"}
+{"id": "t03", "split": "test", "asker": "student.cse5a@bitmesra.ac.in", "question": "Which topics does CS302 cover on normalisation?", "answerable": true, "gold_document": "syllabus_cse_sem5.pdf", "gold_pages": [2], "gold_answer_points": ["fourth normal form"], "kind": "exact"}
+{"id": "t04", "split": "test", "asker": "student.ece3b@bitmesra.ac.in", "question": "What is the fine for keeping a library book too long?", "answerable": true, "gold_document": "library_rules.pdf", "gold_pages": [1], "gold_answer_points": ["2 rupees per day"], "kind": "paraphrase"}
+{"id": "t05", "split": "test", "asker": "student.cse5a@bitmesra.ac.in", "question": "My family income is 3 lakh. Is there any help available?", "answerable": true, "gold_document": "scholarship_scheme.pdf", "gold_pages": [2], "gold_answer_points": ["400000", "40000", "means based"], "kind": "paraphrase"}
+{"id": "t06", "split": "test", "asker": "student.cse5a@bitmesra.ac.in", "question": "When do faculty appraisal forms have to reach the dean?", "answerable": false, "gold_answer_points": [], "kind": "wrong_audience"}
