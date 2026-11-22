@@ -7,10 +7,10 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 
-from app.auth import decode_preview_token
-from app.database import get_db
-from app.models.db_models import Document, DocumentVersion
-from app.services.access_policy import allowed_document_versions
+from backend.auth import decode_preview_token
+from backend.database import get_db
+from backend.models.db_models import Document, DocumentVersion
+from backend.services.access_policy import allowed_document_versions
 
 router = APIRouter(prefix="/files", tags=["files"])
 

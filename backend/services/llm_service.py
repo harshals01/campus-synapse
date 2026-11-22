@@ -6,7 +6,7 @@ import time
 
 import requests
 
-from app import config
+from backend import config
 
 _GROQ_LLM_URL = "https://api.groq.com/openai/v1/chat/completions"
 

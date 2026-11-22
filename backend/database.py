@@ -6,7 +6,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 
-from app import config
+from backend import config
 
 os.makedirs("./data", exist_ok=True)
 

@@ -9,10 +9,10 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
-from app.auth import require_role
-from app.database import get_db
-from app.models.db_models import QueryLog, User
-from app.models.schemas import CreateUserRequest, PatchUserRequest, QueryLogOut, UserProfile
+from backend.auth import require_role
+from backend.database import get_db
+from backend.models.db_models import QueryLog, User
+from backend.models.schemas import CreateUserRequest, PatchUserRequest, QueryLogOut, UserProfile
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 

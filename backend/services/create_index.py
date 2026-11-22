@@ -11,8 +11,8 @@ Usage
 """
 import argparse
 
-from app.config import INDEX_NAME
-from app.services.qdrant_service import ensure_collection_exists, qdrant_client
+from backend.config import INDEX_NAME
+from backend.services.qdrant_service import ensure_collection_exists, qdrant_client
 
 
 def recreate_collection() -> None:

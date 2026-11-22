@@ -15,10 +15,10 @@ from datetime import datetime, timezone
 
 from qdrant_client.http.models import PointStruct
 
-from app.config import INDEX_NAME, INGEST_BATCH_SIZE
-from app.services.embedding_service import get_embeddings_batch
-from app.services.qdrant_service import qdrant_client
-from app.services.text_processor import chunk_text, extract_text_from_path
+from backend.config import INDEX_NAME, INGEST_BATCH_SIZE
+from backend.services.embedding_service import get_embeddings_batch
+from backend.services.qdrant_service import qdrant_client
+from backend.services.text_processor import chunk_text, extract_text_from_path
 
 
 def index_chunks(chunks: list[str], file_path: str) -> None:

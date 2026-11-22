@@ -6,7 +6,6 @@ Usage
 - `Depends(get_current_user)`      → returns the authenticated User ORM object
 - `Depends(require_role("admin"))` → raises 403 if the user is not an admin
 """
-import hmac
 from datetime import datetime, timedelta, timezone
 from typing import Annotated
 
@@ -15,9 +14,9 @@ from fastapi import Depends, Header, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy.orm import Session
 
-from app import config
-from app.database import get_db
-from app.models.db_models import User
+from backend import config
+from backend.database import get_db
+from backend.models.db_models import User
 
 _bearer = HTTPBearer(auto_error=False)
 
