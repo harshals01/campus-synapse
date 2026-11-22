@@ -90,6 +90,7 @@ class DocumentVersionOut(BaseModel):
 
 class DocumentOut(BaseModel):
     id: str
+    owner_id: str
     display_name: str
     category: str
     audience_type: str | None
