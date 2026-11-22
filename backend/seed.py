@@ -3,7 +3,7 @@ Seed script — creates demo accounts for each role.
 Run once after the backend has started at least once (to create the DB tables).
 
 Usage:
-    python -m app.seed
+    python -m backend.seed
 """
 from passlib.context import CryptContext
 from backend.database import SessionLocal

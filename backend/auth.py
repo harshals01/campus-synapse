@@ -6,7 +6,6 @@ Usage
 - `Depends(get_current_user)`      → returns the authenticated User ORM object
 - `Depends(require_role("admin"))` → raises 403 if the user is not an admin
 """
-import hmac
 from datetime import datetime, timedelta, timezone
 from typing import Annotated
 
