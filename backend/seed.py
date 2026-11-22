@@ -6,9 +6,9 @@ Usage:
     python -m app.seed
 """
 from passlib.context import CryptContext
-from app.database import SessionLocal
-from app.models.db_models import User, Base
-from app.database import engine
+from backend.database import SessionLocal
+from backend.models.db_models import User, Base
+from backend.database import engine
 
 Base.metadata.create_all(bind=engine)
 

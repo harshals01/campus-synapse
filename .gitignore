@@ -1,13 +1,22 @@
-@'
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
 
+# Environment - never commit real secrets
 .env
 .env.*
 !.env.example
+
+# Runtime data: SQLite DB, Qdrant local store, uploaded PDFs, logs
+data/
+logs/
+*.db
+
+# Frontend
 node_modules/
-.venv/
-venv/
-__pycache__/
-*.pyc
 dist/
+
+# Local planning notes
 context.md
-'@ | Add-Content .gitignore

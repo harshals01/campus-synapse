@@ -6,11 +6,11 @@ Conversation history routes — owner-only, with per-message access re-validatio
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
-from app.auth import get_current_user
-from app.database import get_db
-from app.models.db_models import Conversation, Document, DocumentVersion, Message, User
-from app.models.schemas import ConversationOut, MessageOut
-from app.services.access_policy import allowed_document_versions
+from backend.auth import get_current_user
+from backend.database import get_db
+from backend.models.db_models import Conversation, Document, DocumentVersion, Message, User
+from backend.models.schemas import ConversationOut, MessageOut
+from backend.services.access_policy import allowed_document_versions
 
 router = APIRouter(prefix="/conversations", tags=["conversations"])
 

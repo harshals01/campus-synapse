@@ -6,7 +6,7 @@ from datetime import datetime
 from pydantic import BaseModel, Field, field_validator
 from typing import Literal
 
-from app import config
+from backend import config
 
 
 # ── Auth ───────────────────────────────────────────────────────────────────────
@@ -99,9 +99,23 @@ class DocumentOut(BaseModel):
     active_version: int | None
     created_at: datetime
     active_version_status: str | None = None   # populated by route
+    chunk_count: int | None = None             # populated by route
 
     model_config = {"from_attributes": True}
 
+
+class IngestResponse(BaseModel):
+    """Returned immediately after an upload; indexing continues in the background."""
+    document_id: str
+    version: int
+    status: str          # processing | ready | failed
+    display_name: str
+
+
+class PreviewLinkResponse(BaseModel):
+    """A short-lived token for GET /files/{token}, plus the page anchor to append."""
+    token: str
+    page_fragment: str   # e.g. '#page=4', or '' when no page was requested
 
 # ── Chat ──────────────────────────────────────────────────────────────────────
 

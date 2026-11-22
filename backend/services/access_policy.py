@@ -7,7 +7,7 @@ No route constructs its own permission filter.
 """
 from sqlalchemy.orm import Session
 
-from app.models.db_models import Document, DocumentVersion, User
+from backend.models.db_models import Document, DocumentVersion, User
 
 
 def allowed_document_versions(user: User, db: Session) -> list[str]:

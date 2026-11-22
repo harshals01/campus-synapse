@@ -1,14 +1,14 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 
-from app.auth import require_api_key, get_current_user_id
-from app import config
-from app.config import LOW_CONFIDENCE_THRESHOLD, MAX_CONTEXT_DOCS
-from app.logger import get_logger
-from app.models.request_models import ChatRequest, Citation
-from app.services.fusion_service import rrf_fusion
-from app.services.llm_service import call_llm
-from app.services.search_service import run_search
-from app.utils.query_utils import rewrite_query_with_context
+from backend.auth import require_api_key, get_current_user_id
+from backend import config
+from backend.config import LOW_CONFIDENCE_THRESHOLD, MAX_CONTEXT_DOCS
+from backend.logger import get_logger
+from backend.models.request_models import ChatRequest, Citation
+from backend.services.fusion_service import rrf_fusion
+from backend.services.llm_service import call_llm
+from backend.services.search_service import run_search
+from backend.utils.query_utils import rewrite_query_with_context
 
 router = APIRouter()
 logger = get_logger()

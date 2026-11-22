@@ -8,10 +8,10 @@ from fastapi import APIRouter, Depends, HTTPException, Request, status
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
-from app.auth import create_access_token, get_current_user
-from app.database import get_db
-from app.models.db_models import User
-from app.models.schemas import LoginRequest, TokenResponse, UserProfile
+from backend.auth import create_access_token, get_current_user
+from backend.database import get_db
+from backend.models.db_models import User
+from backend.models.schemas import LoginRequest, TokenResponse, UserProfile
 
 router = APIRouter(tags=["auth"])
 

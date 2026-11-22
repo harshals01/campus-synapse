@@ -1,13 +1,13 @@
 import os
-from app.services.embedding_service import get_embedding
-from app.services.qdrant_service import (
+from backend.services.embedding_service import get_embedding
+from backend.services.qdrant_service import (
     semantic_search,
     keyword_search,
     get_latest_source_file,
     qdrant_models,
 )
-from app.utils.query_utils import extract_entity
-from app.config import INDEX_NAME
+from backend.utils.query_utils import extract_entity
+from backend.config import INDEX_NAME
 
 
 def _user_condition(user_id: str) -> "qdrant_models.FieldCondition":

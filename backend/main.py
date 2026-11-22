@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 # Validate critical secrets before anything else loads.
-from app import config
+from backend import config
 config._validate_startup()
 
 from datetime import datetime, timedelta, timezone
@@ -12,16 +12,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from app.database import SessionLocal, engine
-from app.models import db_models
-from app.routes.auth import router as auth_router
-from app.routes.chat import router as chat_router
-from app.routes.documents import router as documents_router
-from app.routes.ingest import router as ingest_router
-from app.routes.admin import router as admin_router
-from app.routes.conversations import router as conversations_router
-from app.routes.files import router as files_router
-from app.logger import get_logger
+from backend.database import SessionLocal, engine
+from backend.models import db_models
+from backend.routes.auth import router as auth_router
+from backend.routes.chat import router as chat_router
+from backend.routes.documents import router as documents_router
+from backend.routes.ingest import router as ingest_router
+from backend.routes.admin import router as admin_router
+from backend.routes.conversations import router as conversations_router
+from backend.routes.files import router as files_router
+from backend.logger import get_logger
 
 logger = get_logger()
 
